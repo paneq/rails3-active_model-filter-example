@@ -1,3 +1,5 @@
+# TODO: Date select trio i wyswietlanie valid from valid to
+
 class CarsController < ApplicationController
 
   def search
