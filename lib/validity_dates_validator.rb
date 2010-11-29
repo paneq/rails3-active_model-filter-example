@@ -1,5 +1,5 @@
 require 'test/unit/assertions'
-require 'intime/validate_options'
+require 'validate_options'
 
 # checks if record.from <= record.to
 class ValidityDatesValidator < ::ActiveModel::Validator

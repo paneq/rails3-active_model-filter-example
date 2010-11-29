@@ -19,7 +19,7 @@ class ValidityDatesValidatorProxy < ::ActiveModel::Validator
       
     klass.class_eval do
       validates_presence_of *columns, options.slice(:if, :unless)
-      validates_with ::InTime::ValidityDatesValidator, options
+      validates_with ::ValidityDatesValidator, options
     end
 
   end

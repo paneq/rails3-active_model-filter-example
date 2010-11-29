@@ -57,6 +57,10 @@ GEM
     builder (3.0.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    formtastic (1.2.2)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
+      i18n (>= 0.4.0)
     i18n (0.4.2)
     mail (2.2.10)
       activesupport (>= 2.3.6)
@@ -64,6 +68,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    nifty-generators (0.4.0)
     polyglot (0.3.1)
     rack-cache (0.5.3)
       rack (>= 0.4)
@@ -82,6 +87,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  formtastic (= 1.2.2)
+  nifty-generators
   rack!
   rails!
   sqlite3-ruby

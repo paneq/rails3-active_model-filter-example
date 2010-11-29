@@ -1,27 +1,39 @@
+<%= semantic_form_for(@search, :url => search_cars_path) do |f| %>
+
+  <%= f.inputs do %>
+    <%= f.input :color, :as => :check_boxes, :collection => Car.colors, :label_method => Proc.new{|c| "<span style='background-color: ##{c};'> #{c}</span>".html_safe } %>
+    <%= f.input :brand, :as => :select, :collection => Car.brands %>
+    <%= f.input :producent, :as => :select, :collection => Car.producents %>
+  <% end %>
+
+  <%= f.buttons %>
+<% end %>
+
+
 <h1>Listing cars</h1>
 
 <table>
   <tr>
     <th>Producent</th>
     <th>Brand</th>
-    <th>Collor</th>
+    <th>Color</th>
     <th>Max speed</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @cars.each do |car| %>
-  <tr>
-    <td><%= car.producent %></td>
-    <td><%= car.brand %></td>
-    <td><%= car.collor %></td>
-    <td><%= car.max_speed %></td>
-    <td><%= link_to 'Show', car %></td>
-    <td><%= link_to 'Edit', edit_car_path(car) %></td>
-    <td><%= link_to 'Destroy', car, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.producent %></td>
+      <td><%= car.brand %></td>
+      <td><%= car.color %></td>
+      <td><%= car.max_speed %></td>
+      <td><%= link_to 'Show', car %></td>
+      <td><%= link_to 'Edit', edit_car_path(car) %></td>
+      <td><%= link_to 'Destroy', car, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />

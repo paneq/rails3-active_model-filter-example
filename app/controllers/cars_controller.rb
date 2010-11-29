@@ -1,12 +1,15 @@
 class CarsController < ApplicationController
 
   def search
-    @cars = Car.where(Search.new(params[:search]))
+    @search = Search.new(params[:search])
+    @cars = @search.results.order("valid_from ASC")
+    render :index
   end
 
   # GET /cars
   # GET /cars.xml
   def index
+    @search = Search.new
     @cars = Car.all
 
     respond_to do |format|

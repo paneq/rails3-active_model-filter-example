@@ -7,6 +7,9 @@ gem 'rails', :git => '/home/rupert/test/rails'
 gem 'rack', :git => 'git://github.com/rack/rack'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'formtastic', '1.2.2'
+
+gem 'nifty-generators'
 
 # Use unicorn as the web server
 # gem 'unicorn'
