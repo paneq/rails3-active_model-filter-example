@@ -41,4 +41,10 @@ module Uw
   end
 end
 
+ActiveSupport.on_load(:after_initialize) do
+  require 'date_extensions'
+  DateExtensions.logger = Rails.logger
+  Date.send(:include, DateExtensions)
+end
+
 require 'active_model_extensions'
