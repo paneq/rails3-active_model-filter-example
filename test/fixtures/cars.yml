@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  producent: MyString
+  brand: MyString
+  collor: MyString
+  max_speed: 9.99
+
+two:
+  producent: MyString
+  brand: MyString
+  collor: MyString
+  max_speed: 9.99
