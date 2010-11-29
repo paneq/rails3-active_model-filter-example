@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101129213109) do
+ActiveRecord::Schema.define(:version => 20101129214440) do
 
   create_table "cars", :force => true do |t|
     t.string   "producent",                                 :null => false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20101129213109) do
     t.decimal  "max_speed",  :precision => 10, :scale => 2, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "valid_from"
+    t.date     "valid_to"
   end
 
 end

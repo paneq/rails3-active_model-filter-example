@@ -40,3 +40,5 @@ module Uw
     config.filter_parameters += [:password]
   end
 end
+
+require 'active_model_extensions'

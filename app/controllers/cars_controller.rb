@@ -1,4 +1,9 @@
 class CarsController < ApplicationController
+
+  def search
+    @cars = Car.where(Search.new(params[:search]))
+  end
+
   # GET /cars
   # GET /cars.xml
   def index

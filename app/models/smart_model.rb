@@ -13,4 +13,11 @@ module SmartModel
     false
   end
 
+  def attributes=(values)
+    sanitize_for_mass_assignment(values).each do |k, v|
+      send("#{k}=", v)
+    end
+  end
+
+
 end
