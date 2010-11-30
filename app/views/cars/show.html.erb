@@ -1,25 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Showing car</h1>
 
-<p>
-  <b>Producent:</b>
-  <%= @car.producent %>
-</p>
-
-<p>
-  <b>Brand:</b>
-  <%= @car.brand %>
-</p>
-
-<p>
-  <b>Collor:</b>
-  <%= @car.collor %>
-</p>
-
-<p>
-  <b>Max speed:</b>
-  <%= @car.max_speed %>
-</p>
-
+<%= render :partial => 'form', :locals => {:disabled => true} %>
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>

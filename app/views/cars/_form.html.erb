@@ -1,13 +1,24 @@
+<% disabled ||= false %>
+
 <%= semantic_form_for(@car) do |f| %>
 
   <%= f.inputs do %>
-    <%= f.input :producent %>
-    <%= f.input :brand %>
-    <%= f.input :color %>
-    <%= f.input :max_speed %>
+    <%= f.input :producent, :input_html => {:disabled => disabled} %>
+    <%= f.input :brand, :input_html => {:disabled => disabled} %>
+    <%= f.input :color, :input_html => {:disabled => disabled} %>
+    <%= f.input :max_speed, :input_html => {:disabled => disabled} %>
+
+    <% if disabled %>
+      <%= f.input :valid_from, :as => :string, :input_html => {:disabled => true} %>
+      <%= f.input :valid_to, :as => :string, :input_html => {:disabled => true} %>
+    <% else %>
+      <%= f.input :valid_from %>
+      <%= f.input :valid_to %>
+    <% end %>
+
   <% end %>
 
-  <%= f.buttons %>
+  <%= f.buttons unless disabled %>
 
 <% end %>
 
