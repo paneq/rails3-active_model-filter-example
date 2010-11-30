@@ -23,7 +23,7 @@ class Search
     return scope
   end
 
-  def color_blank?
+  def color_blank? # blank? or array of blanks
     return color.to_a.reject{|p| p.blank? }.blank? if color.respond_to?(:to_a)
     return color.blank?
   end

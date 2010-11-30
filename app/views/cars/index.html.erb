@@ -1,4 +1,8 @@
-<% include_date_select_trio %>
+<% content_for(:head) do %>
+  <%= calendar_date_select_includes %>
+  <%= render :partial => 'shared/js/calendar_selector' %>
+  <%= javascript_include_tag 'date_select_trio' %>
+<% end %>
 
 <%= semantic_form_for(@search, :url => search_cars_path) do |f| %>
 
@@ -6,6 +10,7 @@
     <%= f.input :color, :as => :check_boxes, :collection => Car.colors, :label_method => Proc.new{|c| "<span style='background-color: ##{c};'> #{c}</span>".html_safe } %>
     <%= f.input :brand, :as => :select, :collection => Car.brands %>
     <%= f.input :producent, :as => :select, :collection => Car.producents %>
+    <%= f.date_select_trio %>
   <% end %>
 
   <%= f.buttons %>
@@ -20,6 +25,8 @@
     <th>Brand</th>
     <th>Color</th>
     <th>Max speed</th>
+    <th>Valid from</th>
+    <th>Valid to</th>
     <th></th>
     <th></th>
     <th></th>
@@ -31,6 +38,8 @@
       <td><%= car.brand %></td>
       <td><%= car.color %></td>
       <td><%= car.max_speed %></td>
+      <td><%= car.valid_from %></td>
+      <td><%= car.valid_to %></td>
       <td><%= link_to 'Show', car %></td>
       <td><%= link_to 'Edit', edit_car_path(car) %></td>
       <td><%= link_to 'Destroy', car, :confirm => 'Are you sure?', :method => :delete %></td>

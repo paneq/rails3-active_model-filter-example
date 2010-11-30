@@ -19,7 +19,6 @@ module TimeScopes
 
   def parse_params(range_or_valid_from, valid_to)
     return range_or_valid_from.begin, range_or_valid_from.end if Range === range_or_valid_from && valid_to.nil?
-    return range_or_valid_from.valid_from, range_or_valid_from.valid_to if DateRange === range_or_valid_from && valid_to.nil?
     return range_or_valid_from, valid_to unless range_or_valid_from.nil? || valid_to.nil?
     raise ArgumentError
   end

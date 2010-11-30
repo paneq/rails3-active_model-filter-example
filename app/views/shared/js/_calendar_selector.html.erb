@@ -1,0 +1,11 @@
+<%= javascript_tag do %>
+  CalendarSelector = {};
+  <% Date::RECOGNIZED_PERIODS.each do |p| %>
+    <% start_date = Date.calculate_start(p) %>
+    <% end_date = Date.calculate_end(p) %>
+    CalendarSelector['<%= p -%>']= {
+      start: new Date(<%= start_date.year -%>, <%=  start_date.month - 1 -%>, <%= start_date.day -%>).toFormattedString(),
+      end: new Date(<%= end_date.year -%>, <%=  end_date.month - 1 -%>, <%= end_date.day -%>).toFormattedString()
+    };
+  <% end %>
+<% end %>

@@ -9,6 +9,9 @@ gem 'rack', :git => 'git://github.com/rack/rack'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'formtastic', '1.2.2'
 
+gem 'calendar_date_select', :git => 'ssh://rupert@ror-devel/home/rupert/develop/materialized_git/calendar_date_select', :branch => 'rails3test'
+gem 'formtastic_calendar_date_select', :git => 'ssh://rupert@ror-devel/home/rupert/develop/materialized_git/formtastic_calendar_date_select'
+
 gem 'nifty-generators'
 
 # Use unicorn as the web server

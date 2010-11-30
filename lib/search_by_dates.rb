@@ -15,10 +15,8 @@ module SearchByDates
 
   included do
     validate_validity_dates
-
-    validate do
-      validates_inclusion_of :period, :in => Date::RECOGNIZED_PERIODS.map(&:to_s), :allow_blank => true, :allow_nil => true
-    end
+    validates_inclusion_of :period, :in => Date::RECOGNIZED_PERIODS.map(&:to_s), :allow_blank => true, :allow_nil => true
+    attr_accessible :valid_from, :valid_to, :period if respond_to?(:attr_accessible)
   end
 
 end
