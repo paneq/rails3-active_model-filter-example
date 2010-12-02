@@ -4,7 +4,11 @@ class CarsController < ApplicationController
 
   def search
     @search = Search.new(params[:search])
-    @cars = @search.results.order("valid_from ASC")
+    if @search.valid?
+      @cars = @search.results.order("valid_from ASC")
+    else
+      @cars = Car.all
+    end
     render :index
   end
 
