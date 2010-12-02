@@ -6,7 +6,9 @@
 <%= semantic_form_for(@search, :url => search_cars_path) do |f| %>
 
   <%= f.inputs do %>
+
     <%= f.input :color, :as => :check_boxes, :collection => Car.colors, :label_method => Proc.new{|c| "<span style='background-color: ##{c};'> #{c}</span>".html_safe } %>
+
     <%= f.input :brand, :as => :select, :collection => Car.brands %>
     <%= f.input :producent, :as => :select, :collection => Car.producents %>
     <%= f.date_select_trio %>

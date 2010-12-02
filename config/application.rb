@@ -47,6 +47,4 @@ ActiveSupport.on_load(:after_initialize) do
   Date.send(:include, DateExtensions)
 end
 
-require 'active_model_extensions'
-
 CalendarDateSelect.format = :iso_date
