@@ -1,9 +1,10 @@
+require 'smart_model'
 require 'search_by_dates'
 
 class Search
 
-  include SmartModel
-  include SearchByDates
+  include ::SmartModel
+  include ::SearchByDates
 
   Attributes = [:producent, :brand, :color]
 
