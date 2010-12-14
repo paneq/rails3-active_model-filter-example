@@ -27,7 +27,9 @@ module SearchByDates
   end
 
   included do
-    # Skipped validation of date range. Too lazy to include all the code needed for that.
+    validates :valid_from, :date => {:unless => Proc.new{|r| r.valid_from_before_type_cast.blank? }}
+    validates :valid_to, :date => {:unless => Proc.new{|r| r.valid_to_before_type_cast.blank? }}
+    # Too lazy to move here code that validates that valid_from and valid_to are valid range.
     validates_inclusion_of :period, :in => Date::RECOGNIZED_PERIODS.map(&:to_s), :allow_blank => true, :allow_nil => true
     attr_accessible :valid_from, :valid_to, :period if respond_to?(:attr_accessible)
   end
