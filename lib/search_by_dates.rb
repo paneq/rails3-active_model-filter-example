@@ -3,7 +3,6 @@ require 'active_record/connection_adapters/abstract/schema_definitions'
 module SearchByDates
 
   extend ::ActiveSupport::Concern
-  DateConversion = ActiveRecord::ConnectionAdapters::Column.new(:anonymous, nil, :date)
 
   attr_reader :period
 
@@ -22,7 +21,7 @@ module SearchByDates
   [:valid_from, :valid_to].each do |attr|
     define_method(:"#{attr}=") do |v|
       instance_variable_set(:"@#{attr}_before_type_cast", v)
-      instance_variable_set(:"@#{attr}", DateConversion.type_cast(v))
+      instance_variable_set(:"@#{attr}", ActiveRecord::ConnectionAdapters::Column.string_to_date(v))
     end
   end
 
