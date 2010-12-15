@@ -10,3 +10,4 @@ gem 'formtastic_calendar_date_select', :git => 'https://github.com/paneq/formtas
 
 gem 'nifty-generators'
 gem 'date_validator'
+gem 'mysql'

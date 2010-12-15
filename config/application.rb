@@ -41,10 +41,8 @@ module Uw
   end
 end
 
-ActiveSupport.on_load(:after_initialize) do
-  require 'date_extensions'
-  DateExtensions.logger = Rails.logger
-  Date.send(:include, DateExtensions)
-end
+require 'date_extensions'
+DateExtensions.logger = Rails.logger
+Date.send(:include, DateExtensions)
 
 CalendarDateSelect.format = :iso_date
